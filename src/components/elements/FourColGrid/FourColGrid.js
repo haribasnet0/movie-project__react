@@ -13,7 +13,6 @@ const FourColGrid = (props) =>{
         })
         return gridElements;
     }
-console.log
     return(
         <div className="rmdb-grid">
             {props.header && !props.loading ? <h1>{props.header}</h1> : null } 

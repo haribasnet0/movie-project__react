@@ -29,7 +29,7 @@ class Home extends React.Component {
         this.setState({
             movies: [],
             loading: true,
-            searchTerm
+            searchTerm: searchTerm
         })
 
         if (searchTerm === '') {
@@ -81,7 +81,7 @@ class Home extends React.Component {
                     <FourColGrid
                         header={this.state.searchTerm ? 'Search Result ' : 'Popular Movies'}
                         loading={this.state.loading}
-                    />
+                    >
                     {this.state.movies.map((element, i) => {
                         return <MovieThumb
                             key={i}
@@ -89,9 +89,9 @@ class Home extends React.Component {
                             image={element.poster_path ? `${IMAGE_BASE_URL}${POSTER_SIZE}${element.poster_path}` : './images/no_image.jpg'}
                             movieId={element.id}
                             movieName={element.original_title}
-                        />
-
-                    })}
+                            />
+                        })}
+                    </FourColGrid>
                 </div>
                 <Spinner />
                 <LoadMoreBtn />

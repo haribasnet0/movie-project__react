@@ -10,8 +10,8 @@ class SearchBar extends Component {
 
     timeout = null;
 
-    doSearch= (event ) =>{
-        this.setState({value:event.target.value})
+    doSearch= (event) => {
+        this.setState({value: event.target.value})
         clearTimeout(this.timeout);
 
         this.timeout = setTimeout(() =>{
@@ -26,7 +26,7 @@ class SearchBar extends Component {
                     <FontAwesome className="rmdb-fa-search" name="search" size="2x" />
                     <input
                         type="text"
-                        className="rmdb-searchbar-content"
+                        className="rmdb-searchbar-input"
                         placeholder="Search movies..."
                         onChange={this.doSearch}
                         value={this.state.value}
