@@ -1,11 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './FourColGrid.css';
 
-const FourColGrid = (props) =>{
+const FourColGrid = (props) => {
 
     const renderElements = () => {
-        const gridElements = props.children.map( (element, i) => {
-            return(
+        const gridElements = props.children.map((element, i) => {
+            return (
                 <div key={i} className="rmdb-grid-element">
                     {element}
                 </div>
@@ -13,14 +14,20 @@ const FourColGrid = (props) =>{
         })
         return gridElements;
     }
-    return(
+    return (
         <div className="rmdb-grid">
-            {props.header && !props.loading ? <h1>{props.header}</h1> : null } 
+            {props.header && !props.loading ? <h1>{props.header}</h1> : null}
             <div className="rmdb-grid-content">
                 {renderElements()}
             </div>
         </div>
     )
+}
+
+FourColGrid.propTypes = {
+    header: PropTypes.string,
+    loading: PropTypes.bool.isRequired
+
 }
 
 export default FourColGrid;
