@@ -20,7 +20,6 @@ const MovieInfoBar = (props) => {
                     <span className="rmdb-movieinfobar-info" >Revenue: {convertMoney(props.revenue)}</span>
                 </div>
             </div>
-            MovieInfoBar
         </div>
     )
 }
